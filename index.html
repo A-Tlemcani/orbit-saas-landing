@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Orbit: AI incident copilot for cloud teams</title>
+    <meta name="description" content="Orbit watches your Kubernetes clusters, correlates alerts across regions and writes the incident summary for you. EU-hosted. Start free in 2 minutes." />
+    <meta name="theme-color" content="#07070d" />
+    <link rel="canonical" href="https://abdeltl.github.io/orbit-saas-landing/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content="Orbit: AI incident copilot for cloud teams" />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json">
+      { "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Orbit", "applicationCategory": "DeveloperApplication", "operatingSystem": "Web", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } }
+    </script>
+  </head>
+  <body>
+    <p class="demo-banner">Concept demo by <a href="https://abdeltl.github.io/" target="_blank" rel="noopener noreferrer">Abderrahman Tlemcani</a>: Orbit is a fictional product.</p>
+    <header class="nav">
+      <a href="#" class="logo"><span class="logo-mark" aria-hidden="true"></span>Orbit</a>
+      <nav aria-label="Primary"><a href="#features">Product</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+      <div class="nav-cta"><a href="#pricing" class="link">Sign in</a><a href="#pricing" class="btn btn-primary btn-sm">Start free</a></div>
+    </header>
+    <main>
+      <section class="hero" data-webgl>
+        <div class="hero-copy">
+          <a class="pill" href="#features"><span>New</span> AI postmortems in 40 languages →</a>
+          <h1>Incidents, <span class="grad">resolved</span><br />before your coffee cools.</h1>
+          <p class="sub">Orbit watches every cluster in every region, correlates alerts into a single incident, and writes the summary, timeline and probable root cause for your on-call engineer.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#pricing">Start free: no card</a>
+            <a class="btn btn-ghost" href="#how">See how it works</a>
+          </div>
+          <p class="trust">EU-hosted · SOC 2 Type II (demo claim) · GDPR-ready</p>
+        </div>
+        <div class="globe-wrap"><canvas id="globe" aria-hidden="true"></canvas></div>
+      </section>
+
+      <section class="logos" aria-label="Teams using Orbit (fictional)">
+        <p>Trusted by platform teams at</p>
+        <ul><li>Nordvik</li><li>Helios&nbsp;Pay</li><li>Quanta</li><li>Lumen&nbsp;Health</li><li>Atlas&nbsp;Freight</li><li>Kairo</li></ul>
+      </section>
+
+      <section class="section" id="features">
+        <header class="head"><p class="eyebrow">Product</p><h2>One calm screen for every incident.</h2><p>Stop tab-hopping between dashboards, logs and chat. Orbit brings the signal to you.</p></header>
+        <div class="bento">
+          <article class="card c-wide">
+            <h3>Alert correlation</h3><p>247 alerts in 3 minutes became 1 incident with a clear blast radius.</p>
+            <div class="viz-stream" aria-hidden="true" id="stream"></div>
+          </article>
+          <article class="card">
+            <h3>AI summaries</h3><p>Plain-language timeline written as it happens.</p>
+            <pre class="viz-code" aria-hidden="true"><span class="k">14:02</span> p99 latency ↑ 340% eu-west-1
+<span class="k">14:03</span> deploy api@v2.41 correlated
+<span class="k">14:04</span> <span class="ok">suggest:</span> roll back api@v2.40</pre>
+          </article>
+          <article class="card">
+            <h3>Mean time to resolve</h3><p>Median across beta teams.</p>
+            <p class="big"><span class="grad" data-count="63">63</span>% <small>faster</small></p>
+          </article>
+          <article class="card">
+            <h3>Kubernetes-native</h3><p>Install with one Helm chart. Reads events, metrics and traces via OpenTelemetry.</p>
+            <pre class="viz-code" aria-hidden="true">helm install orbit orbit/agent \
+  --set token=$ORBIT_TOKEN</pre>
+          </article>
+          <article class="card c-full">
+            <h3>Multi-region map</h3><p>See which regions, services and customers are affected in real time, and who's already on it.</p>
+            <ul class="regions" aria-hidden="true"><li class="bad">eu-west-1 <b>degraded</b></li><li>eu-central-1 <b>ok</b></li><li>us-east-1 <b>ok</b></li><li class="warn">ap-southeast-1 <b>watching</b></li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section how" id="how">
+        <header class="head"><p class="eyebrow">How it works</p><h2>Live in under ten minutes.</h2></header>
+        <ol class="steps">
+          <li><span>1</span><h3>Connect</h3><p>Install the agent with Helm, or connect Datadog, Grafana or Prometheus in two clicks.</p></li>
+          <li><span>2</span><h3>Learn</h3><p>Orbit maps your services and learns what "normal" looks like for each of them in about 24 hours.</p></li>
+          <li><span>3</span><h3>Respond</h3><p>Incidents arrive in Slack with context, owners and a suggested fix. Postmortems write themselves.</p></li>
+        </ol>
+      </section>
+
+      <section class="section" id="pricing">
+        <header class="head center"><p class="eyebrow">Pricing</p><h2>Simple pricing, per engineer.</h2>
+          <div class="billing" role="radiogroup" aria-label="Billing period">
+            <button type="button" role="radio" aria-checked="false" data-billing="monthly">Monthly</button>
+            <button type="button" role="radio" aria-checked="true" data-billing="yearly">Yearly <em>−20%</em></button>
+          </div>
+        </header>
+        <div class="plans" id="plans"></div>
+      </section>
+
+      <section class="section quotes" aria-label="Testimonials (fictional)">
+        <figure><blockquote>“Our first incident with Orbit took 11 minutes end to end. It used to take a war room.”</blockquote><figcaption>Lea M. · Head of Platform, Nordvik (fictional)</figcaption></figure>
+        <figure><blockquote>“The AI summary is what our execs actually read. Postmortems went from a week to an afternoon.”</blockquote><figcaption>Daniel K. · SRE Lead, Helios Pay (fictional)</figcaption></figure>
+      </section>
+
+      <section class="section faq" id="faq">
+        <header class="head"><p class="eyebrow">FAQ</p><h2>Questions, answered.</h2></header>
+        <div class="faq-list">
+          <details><summary>Where is my data stored?</summary><p>In the EU (Frankfurt and Paris) by default. Enterprise plans can pin data to a single region. We never train models on your data.</p></details>
+          <details><summary>Do I have to replace my monitoring stack?</summary><p>No. Orbit sits on top of Prometheus, Datadog, Grafana or OpenTelemetry and correlates what they already send.</p></details>
+          <details><summary>How is a "seat" counted?</summary><p>Any engineer who can acknowledge incidents. Viewers and stakeholders are free and unlimited.</p></details>
+          <details><summary>Can I cancel anytime?</summary><p>Yes. Monthly plans cancel at the end of the period; yearly plans are refunded pro rata within 30 days.</p></details>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Your next incident could be your calmest.</h2>
+        <a class="btn btn-primary" href="#pricing">Start free</a>
+      </section>
+    </main>
+    <footer class="footer"><p>© 2026 Orbit (fictional) · Design & development: <a href="https://abdeltl.github.io/" target="_blank" rel="noopener noreferrer">Abderrahman Tlemcani</a></p></footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
