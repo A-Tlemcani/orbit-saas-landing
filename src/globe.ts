@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { createStage, pointerTracker } from './lib/stage';
+import { isLand } from './landmask';
 
 /** Points on a sphere (instanced), animated arcs between "regions", and a fresnel atmosphere. */
 export function initGlobe(canvas: HTMLCanvasElement) {
@@ -12,18 +13,16 @@ export function initGlobe(canvas: HTMLCanvasElement) {
   globe.rotation.set(0.35, 0, 0.15);
   scene.add(globe);
 
-  // Dotted sphere: Fibonacci lattice, masked by low-frequency trig "continents" for a map-like feel.
-  const N = innerWidth < 700 ? 6000 : 12000;
+  // Dotted sphere: Fibonacci lattice, kept only where Natural Earth says there is land.
+  const N = innerWidth < 700 ? 7000 : 14000;
   const dot = new THREE.CircleGeometry(0.018, 6);
   const dots = new THREE.InstancedMesh(dot, new THREE.MeshBasicMaterial({ color: '#8b7bff', transparent: true, opacity: 0.85 }), N);
   const m = new THREE.Matrix4(), p = new THREE.Vector3(), q = new THREE.Quaternion(), one = new THREE.Vector3(1, 1, 1), z = new THREE.Vector3(0, 0, 1);
   let n = 0;
-  for (let i = 0; i < N * 2.2 && n < N; i++) {
-    const y = 1 - (i / (N * 2.2 - 1)) * 2, r = Math.sqrt(1 - y * y), phi = i * Math.PI * (3 - Math.sqrt(5));
+  for (let i = 0; i < N * 3.4 && n < N; i++) {
+    const y = 1 - (i / (N * 3.4 - 1)) * 2, r = Math.sqrt(1 - y * y), phi = i * Math.PI * (3 - Math.sqrt(5));
     p.set(Math.cos(phi) * r, y, Math.sin(phi) * r);
-    const lat = Math.asin(p.y), lon = Math.atan2(p.z, p.x);
-    const land = Math.sin(lon * 2 + 0.6) * Math.cos(lat * 3) + Math.sin(lon * 5 + lat * 2) * 0.35 + Math.cos(lat * 1.3) * 0.25;
-    if (land < 0.15) continue;
+    if (!isLand(THREE.MathUtils.radToDeg(Math.asin(p.y)), THREE.MathUtils.radToDeg(Math.atan2(-p.z, p.x)))) continue;
     q.setFromUnitVectors(z, p);
     dots.setMatrixAt(n++, m.compose(p.clone().multiplyScalar(R), q, one));
   }
