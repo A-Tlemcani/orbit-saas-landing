@@ -2,9 +2,9 @@
 
 A conversion-focused landing page for a fictional AI incident-management SaaS, with an interactive WebGL globe, bento feature grid, monthly/yearly pricing toggle and accessible FAQ.
 
-**Live demo → [https://abdeltl.github.io/orbit-saas-landing/](https://abdeltl.github.io/orbit-saas-landing/)**
+**Live demo → [https://a-tlemcani.github.io/orbit-saas-landing/](https://a-tlemcani.github.io/orbit-saas-landing/)**
 
-![Screenshot](https://abdeltl.github.io/work/orbit-saas-landing.jpg)
+![Screenshot](https://a-tlemcani.github.io/work/orbit-saas-landing.jpg)
 
 ## Highlights
 - **WebGL globe:** up to 12k instanced dots on a Fibonacci lattice masked into continents, animated data arcs (tube geometry + shader window) and a fresnel atmosphere
@@ -32,4 +32,4 @@ npm run build    # typecheck + production build in dist/
 Every push to `main` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml` (Settings → Pages → Source: *GitHub Actions*).
 
 ---
-Designed & developed by [Abderrahman Tlemcani](https://abdeltl.github.io/). The brand in this demo is fictional.
+Designed & developed by [Abderrahman Tlemcani](https://a-tlemcani.github.io/). The brand in this demo is fictional.

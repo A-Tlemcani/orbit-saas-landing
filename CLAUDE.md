@@ -3,7 +3,7 @@
 High-conversion SaaS landing page with a WebGL globe, bento features, pricing toggle and accessible FAQ.
 
 ## Stack
-Vite 8 + TypeScript (strict) + Three.js, no framework. Static build in `dist/`, deployed by `.github/workflows/deploy.yml` to GitHub Pages (https://abdeltl.github.io/orbit-saas-landing/).
+Vite 8 + TypeScript (strict) + Three.js, no framework. Static build in `dist/`, deployed by `.github/workflows/deploy.yml` to GitHub Pages (https://a-tlemcani.github.io/orbit-saas-landing/).
 
 ## Commands
 - `npm ci --ignore-scripts` – install (lockfile is the source of truth)
